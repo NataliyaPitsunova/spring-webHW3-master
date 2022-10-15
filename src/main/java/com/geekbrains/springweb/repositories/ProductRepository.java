@@ -21,7 +21,7 @@ public class ProductRepository {
         ));
     }
 
-    public List<Product> getAllProduct() {
+    public List<Product> getAllProducts() {
         return Collections.unmodifiableList(groceryList);
     }
 
@@ -34,6 +34,10 @@ public class ProductRepository {
 
     public void add(Product product) {
         groceryList.add(product);
+    }
+
+    public void deleteById(Long id){
+        groceryList.removeIf(p->p.getId().equals(id));
     }
 
 
